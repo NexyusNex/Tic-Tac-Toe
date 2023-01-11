@@ -1,15 +1,13 @@
-const gameBoard = ((board) => {
-  let gameBoard = [];
+const gameBoard = (() => {
+  let gameBoard = ["x", "o", "o", "x", "o", "x", "o", "o", "x"];
 })();
 
 const Player = (player) => {
   const name = player;
 };
 
-const board = gameBoard([(x, o, o, x, o, x, o, o, x)]);
+const temp = gameBoard();
 
 function Display() {
-  for (let i = 0; i < 9; i++) {
-    console.log(board.gameBoard[i]);
-  }
+  for (let i = 0; i < 9; i++) {}
 }

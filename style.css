@@ -22,3 +22,25 @@ body {
   font-size: 86px;
   color: white;
 }
+
+.container {
+  width: 100vw;
+  background-color: rgb(34, 31, 61);
+  padding: 50px 20%;
+}
+.gameboard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background-color: white;
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+}
+.slot {
+  background-color: #0f172a;
+}
+
+.slot:hover {
+  background-color: #15203a;
+}
