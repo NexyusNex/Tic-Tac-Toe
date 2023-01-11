@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0f172a;
+}
+
+@font-face {
+  font-family: roboto;
+  src: url(Roboto-Regular.ttf);
+}
+
+.header {
+  display: flex;
+  width: 100vw;
+  background-color: #334155;
+  height: 150px;
+  justify-content: center;
+  align-items: center;
+  font-size: 86px;
+  color: white;
+}
