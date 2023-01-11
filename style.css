@@ -26,7 +26,6 @@ body {
 
 .container {
   width: 100vw;
-  background-color: rgb(34, 31, 61);
   padding: 50px 20%;
 }
 .gameboard {
@@ -44,9 +43,15 @@ body {
   align-items: center;
   justify-content: center;
   color: white;
+  width: 166px;
+  height: 166px;
   font-size: 86px;
 }
 
 .slot:hover {
   background-color: #15203a;
+}
+
+.slot:active {
+  background-color: #1b2949;
 }
