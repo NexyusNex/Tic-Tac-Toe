@@ -26,8 +26,16 @@ body {
 
 .container {
   width: 100vw;
-  padding: 50px 20%;
+  padding: 25px 20%;
+  text-align: center;
+  color: #e2e8f0;
 }
+
+.container h1 {
+  padding-bottom: 25px;
+  height: 65px;
+}
+
 .gameboard {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -54,4 +62,26 @@ body {
 
 .slot:active {
   background-color: #1b2949;
+}
+
+.buttonContainer {
+  text-align: center;
+}
+
+.buttonContainer button {
+  color: white;
+  background-color: #334155;
+  border: 2px solid #1e2733;
+  width: 100px;
+  height: 40px;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.buttonContainer button:hover {
+  background-color: #42546d;
+}
+
+.buttonContainer button:active {
+  background-color: #506583;
 }

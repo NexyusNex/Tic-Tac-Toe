@@ -5,6 +5,7 @@ const gameBoard = (() => {
   let board = ["", "", "", "", "", "", "", "", ""];
 
   function UseMove(index) {
+    console.log("a", board[index], gameEnd);
     if (board[index] == "" && gameEnd == false) {
       if (turn == true) {
         board[index] = "X";
@@ -18,9 +19,19 @@ const gameBoard = (() => {
     }
   }
 
+  function resetBoard() {
+    board.fill("", 0, 9);
+    turn = true;
+    gameEnd = false;
+    const result = document.querySelector("#result");
+    result.textContent = "";
+    Display();
+  }
+
   return {
     board,
     UseMove: UseMove,
+    resetBoard: resetBoard,
   };
 })();
 
@@ -30,11 +41,13 @@ const Player = (player) => {
 
 function winner(element) {
   if (element == "O") {
-    alert("the winner is player 2");
+    const result = document.querySelector("#result");
+    result.textContent = "O wins the round!";
     gameEnd = true;
   }
   if (element == "X") {
-    alert("the winner is player 1");
+    const result = document.querySelector("#result");
+    result.textContent = "X wins the round!";
     gameEnd = true;
   }
 }
@@ -88,12 +101,9 @@ function checkBoard() {
   ) {
     winner(gameBoard.board[2]);
   }
-  for (let i = 0; i < 9; i++) {
-    if (gameBoard.board[i] == "") {
-      break;
-    }
-    if (i == 8) alert("it's a tie.");
-    gameEnd = true;
+  if (!gameBoard.board.includes("")) {
+    const result = document.querySelector("#result");
+    result.textContent = "It's a tie!";
   }
 }
 
@@ -116,3 +126,9 @@ function Display() {
 }
 
 Display();
+
+const reset = document.querySelector("#reset");
+
+reset.addEventListener("click", function () {
+  gameBoard.resetBoard();
+});
