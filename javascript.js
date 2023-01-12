@@ -1,5 +1,5 @@
 var turn = true;
-var gameEnd = false;
+var gameEnd = true;
 
 const gameBoard = (() => {
   let board = ["", "", "", "", "", "", "", "", ""];
@@ -35,19 +35,24 @@ const gameBoard = (() => {
   };
 })();
 
-const Player = (player) => {
-  const name = player;
+const Player = (name) => {
+  return {
+    name,
+  };
 };
+
+const player1 = Player("X");
+const player2 = Player("O");
 
 function winner(element) {
   if (element == "O") {
     const result = document.querySelector("#result");
-    result.textContent = "O wins the round!";
+    result.textContent = player2.name + " wins the round!";
     gameEnd = true;
   }
   if (element == "X") {
     const result = document.querySelector("#result");
-    result.textContent = "X wins the round!";
+    result.textContent = player1.name + " wins the round!";
     gameEnd = true;
   }
 }
@@ -108,6 +113,14 @@ function checkBoard() {
 }
 
 function Display() {
+  if (turn == true) {
+    const result = document.querySelector("#result");
+    result.textContent = player1.name + "'s turn.";
+  } else {
+    const result = document.querySelector("#result");
+    result.textContent = player2.name + "'s turn.";
+  }
+
   const container = document.querySelector(".gameboard");
   container.innerHTML = "";
   for (let i = 0; i < 9; i++) {
@@ -125,10 +138,25 @@ function Display() {
   }
 }
 
-Display();
-
 const reset = document.querySelector("#reset");
 
 reset.addEventListener("click", function () {
   gameBoard.resetBoard();
+});
+
+const start = document.querySelector("#start");
+
+start.addEventListener("click", function () {
+  if (gameEnd == true) {
+    player1.name = prompt("Enter the name for player one.");
+    player2.name = prompt("Enter the name for player two.");
+
+    gameBoard.resetBoard();
+    const div = document.querySelectorAll(".gameboard");
+    div.forEach((board) => {
+      board.style.backgroundColor = "white";
+      board.style.border = "none";
+    });
+    Display();
+  }
 });
