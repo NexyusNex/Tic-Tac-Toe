@@ -148,13 +148,11 @@ const start = document.querySelector("#start");
 
 start.addEventListener("click", function () {
   if (gameEnd == true) {
-    player1.name = prompt("Enter the name for player one.");
     do {
-      player1.name = prompt("Enter a valid name");
+      player1.name = prompt("Enter a name for player one.");
     } while (player1.name == "" || player1.name == null);
-    player2.name = prompt("Enter the name for player two.");
     do {
-      player2.name = prompt("Enter a valid name");
+      player2.name = prompt("Enter a name for player two.");
     } while (player2.name == "" || player2.name == null);
 
     gameBoard.resetBoard();
