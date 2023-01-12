@@ -6,6 +6,7 @@
 body {
   background-color: #0f172a;
   font-family: roboto;
+  height: 100vh;
 }
 
 @font-face {
@@ -86,4 +87,23 @@ body {
 
 .buttonContainer button:active {
   background-color: #506583;
+}
+
+.footer {
+  position: absolute;
+  color: white;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer a:visited {
+  color: white;
 }
