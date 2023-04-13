@@ -16,7 +16,6 @@ body {
 
 .header {
   display: flex;
-  width: 100vw;
   background-color: #334155;
   height: 150px;
   justify-content: center;
@@ -26,8 +25,11 @@ body {
 }
 
 .container {
-  width: 100vw;
-  padding: 25px 20%;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-direction: column;
+  padding: 24px 0;
   text-align: center;
   color: #e2e8f0;
 }
@@ -41,6 +43,7 @@ body {
   display: grid;
   border: 2px solid #334155;
   grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   gap: 1px;
   background-color: #182542;
   width: 500px;
@@ -53,9 +56,9 @@ body {
   align-items: center;
   justify-content: center;
   color: white;
-  width: 166px;
-  height: 166px;
-  font-size: 86px;
+  font-size: 84px;
+  width: 100%;
+  height: 100%;
 }
 
 .slot:hover {
@@ -106,4 +109,24 @@ body {
 
 .footer a:visited {
   color: white;
+}
+
+@media screen and (width<=600px) {
+  .gameboard {
+    width: 400px;
+    height: 400px;
+  }
+  .header {
+    font-size: 48px;
+  }
+}
+
+@media screen and (width<=420px) {
+  .gameboard {
+    width: 300px;
+    height: 300px;
+  }
+  .slot {
+    font-size: 64px;
+  }
 }
